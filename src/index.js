@@ -1,3 +1,4 @@
+import css from "./css/styles.css";
 import {HeaderComponent} from './components/header.component.js';
 import {NavigationComponent} from './components/navigation.component.js';
 import {CreateComponent} from './components/create.component.js';
