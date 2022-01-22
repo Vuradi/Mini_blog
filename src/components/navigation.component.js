@@ -2,11 +2,17 @@ import { Component } from "../core/component.js";
 
 export class NavigationComponent extends Component {
     constructor(id) {
-        super(id)
+        super(id);
+
+        this.tabs = [];
     }
 
     init() {
-        this.$el.addEventListener('click', tabClickHandler.bind(this))
+        this.$el.addEventListener('click', tabClickHandler.bind(this));
+    }
+
+    registerTabs(tabs) {
+        this.tabs = tabs;
     }
 }
 
@@ -18,6 +24,11 @@ function tabClickHandler(event) {
             tab.classList.remove('active')
         })
         event.target.classList.add('active');
+
+
+        const activeTab = this.tabs.find(tab => tab.name === event.target.dataset.name);
+        this.tabs.forEach(t => t.component.hide())
+        activeTab.component.show();
     }
 
 }
