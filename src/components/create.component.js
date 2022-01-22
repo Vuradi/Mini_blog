@@ -27,9 +27,10 @@ function submitHandler(event) {
             ...this.form.value()
         }
 
+        this.form.clear();
+
         console.log('submit', formData);
-    } else {
-        console.warn('Form is invalid')
-    }
+    } 
+
    
 }
