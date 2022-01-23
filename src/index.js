@@ -5,6 +5,7 @@ import {CreateComponent} from './components/create.component.js';
 import {PostsComponent} from './components/posts.component.js';
 import {FavoriteComponent} from './components/favorite.component.js';
 
+
 new HeaderComponent('header');
 
 const navigation = new NavigationComponent('navigation');
